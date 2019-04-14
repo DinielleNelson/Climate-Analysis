@@ -79,7 +79,7 @@ def temp_start(start):
         Measurement = Base.classes.measurement
 
         session = Session(engine)
-        tobs_start =session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).filter(Measurement.date >= start).all()
+        tobs_start =session.query(func.min(Measurement.tobs), funcmon.avg(Measurement.tobs), func.max(Measurement.tobs)).filter(Measurement.date >= start).all()
         
         return jsonify(tobs_start)
         
